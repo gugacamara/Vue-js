@@ -19,19 +19,22 @@
     <script>
         const vm = new Vue({
             el: '#app',
-            data: {},
+            data: {
+                n1: 10,
+                n2: 20
+            },
             methods: {
                 somar: function somar(){ // Convencional
-                    return 10 + 20
+                    return this.n1 + this.n2
                 },
                 subtrair: function(){ // Anonima
-                    return 20 - 10
+                    return this.n2 - this.n1
                 },
                 multiplicar: ()=>{
-                    return 10 * 20 // Arrow Function
+                    return this.n2 * this.n1 // Com A.F nao funciona
                 },
                 dividir() {
-                    return 20 / 10 // Forma reduzida
+                    return this.n2 / this.n1 // Forma reduzida
                 },
                 numAleatorio: function numeroAleatorio(){
                     return Math.random()
