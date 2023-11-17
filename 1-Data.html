@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p>Mensagem: {{ message }}</p>
+        <p>Valor Total: {{ valorTotal }}</p>
+        <p>Logado: {{ logado }}</p>
+        <p>Passatempos: {{ hobbies[0] }}</p>
+        <p>Perfil: {{ perfil.nome }}</p>
+        <p>Cursos: {{ perfil.cursos[0].nome }} {{ perfil.cursos[0].cargaHoraria }}</p>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app', // seleciona o elemento(id#) que será controlado pelo Vue
+            data: { // dados que serão utilizados pelo Vue
+                message: 'Hello Vue!',
+                valorTotal: 150.47,
+                logado: true,
+                hobbies: ['futebol', 'natação', 'basquete'],
+
+                perfil:{
+                    nome: 'Guga',
+                    idade: 20,
+                    profissao: 'Programador',
+                    cursos: [
+                    {nome: 'Vue', cargaHoraria: 20},
+                    {nome: 'React', cargaHoraria: 40},
+                    {nome: 'Angular', cargaHoraria: 60},
+                    ]
+                }
+            },
+        })        
+    </script>
+</body>
+</html>
